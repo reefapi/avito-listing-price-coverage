@@ -1,0 +1,101 @@
+{
+  "measured_at": "2026-09-25T14:59:49+00:00",
+  "endpoint": "https://api.reefapi.com/avito/v1/search",
+  "results": [
+    {
+      "query": "iphone",
+      "category": "electronics",
+      "rows": 45,
+      "with_price": 45,
+      "no_price": 0,
+      "explained_free": 0,
+      "explained_withheld": 0,
+      "unexplained": 0,
+      "no_coordinates": 16,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 1.0,
+      "site_total_for_query": 916369,
+      "ok": true
+    },
+    {
+      "query": "квартира",
+      "category": "property to rent",
+      "rows": 50,
+      "with_price": 50,
+      "no_price": 0,
+      "explained_free": 0,
+      "explained_withheld": 0,
+      "unexplained": 0,
+      "no_coordinates": 0,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 1.0,
+      "site_total_for_query": 1993005,
+      "ok": true
+    },
+    {
+      "query": "диван",
+      "category": "furniture",
+      "rows": 48,
+      "with_price": 44,
+      "no_price": 4,
+      "explained_free": 4,
+      "explained_withheld": 0,
+      "unexplained": 0,
+      "no_coordinates": 0,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 0.9167,
+      "site_total_for_query": 455262,
+      "ok": true
+    },
+    {
+      "query": "велосипед",
+      "category": "bicycles",
+      "rows": 48,
+      "with_price": 48,
+      "no_price": 0,
+      "explained_free": 0,
+      "explained_withheld": 0,
+      "unexplained": 0,
+      "no_coordinates": 28,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 1.0,
+      "site_total_for_query": 748529,
+      "ok": true
+    },
+    {
+      "query": "работа",
+      "category": "job ads",
+      "rows": 49,
+      "with_price": 26,
+      "no_price": 23,
+      "explained_free": 0,
+      "explained_withheld": 1,
+      "unexplained": 22,
+      "no_coordinates": 0,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 0.5306,
+      "site_total_for_query": 3361136,
+      "ok": true
+    },
+    {
+      "query": "щенок",
+      "category": "pets",
+      "rows": 48,
+      "with_price": 33,
+      "no_price": 15,
+      "explained_free": 15,
+      "explained_withheld": 0,
+      "unexplained": 0,
+      "no_coordinates": 0,
+      "coordinates_withheld": 0,
+      "price_fill_rate": 0.6875,
+      "site_total_for_query": 119809,
+      "ok": true
+    }
+  ],
+  "totals": {
+    "rows": 288,
+    "with_price": 246,
+    "no_price": 42
+  }
+}

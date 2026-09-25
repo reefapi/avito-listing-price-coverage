@@ -86,7 +86,7 @@ def main() -> int:
     args = ap.parse_args()
     key = os.environ.get("REEFAPI_KEY")
     if not key:
-        print("REEFAPI_KEY is not set. Free key: https://reefapi.com/signup", file=sys.stderr)
+        print("REEFAPI_KEY is not set. Free key: https://reefapi.com/signup?utm_source=github&utm_medium=repo&utm_campaign=avito-listing-price-coverage", file=sys.stderr)
         return 2
 
     out_rows = []

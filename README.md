@@ -47,6 +47,67 @@ instead of one:
 If a provider collapses all three into `price: null`, **you cannot tell a free sofa from a scraping
 failure**, and you will spend a day debugging a bug that does not exist.
 
+## What one row actually looks like
+
+The fields this measurement counts, on a real row returned 2026-09-25. Trimmed to the price and
+location fields; the seller name and the street address are replaced here because publishing them
+is not necessary to show that the field exists, and they come back populated in your own calls.
+
+```json
+{
+  "ad_id": "8513237980",
+  "title": "iPhone 18 Pro Max, 256 ГБ, SIM + eSIM",
+  "url": "https://www.avito.ru/rostov-na-donu/telefony/iphone_18_pro_max_256_gb_sim_esim_8513237980",
+  "category": {
+    "category_id": 84,
+    "name": "Телефоны",
+    "slug": "telefony",
+    "root_category_id": 6
+  },
+  "price": 176500,
+  "price_text": "176 500 ₽",
+  "currency": "RUB",
+  "price_is_from": false,
+  "price_not_published": false,
+  "is_free": false,
+  "price_before_discount": null,
+  "discount_percent": null,
+  "price_lowered": false,
+  "published_at": "2026-09-25T14:56:46Z",
+  "location": {
+    "location_id": 652000,
+    "name": "Ростов-на-Дону",
+    "address": "Ростовская обл., Ростов-на-Дону",
+    "nearby": null
+  },
+  "coordinates": {
+    "lat": 47.231967,
+    "lng": 39.702679,
+    "precision": "exact"
+  },
+  "coordinates_withheld": false,
+  "address_as_typed": "<redacted for this README>",
+  "seller": {
+    "type": "company",
+    "type_label": "Компания",
+    "name": "<redacted for this README>",
+    "name_withheld": false,
+    "name_hidden_by_avito": false,
+    "rating": 4.9,
+    "rating_scale": 5,
+    "reviews_count": 108,
+    "closed_ads_count": 616
+  },
+  "images_count": 2,
+  "is_reserved": false,
+  "delivery_available": false
+}
+```
+
+Note `price_not_published`, `is_free` and `coordinates_withheld` sitting next to the values they
+explain. That is the whole argument of this repo in one object: a null is only useful if something
+next to it says why.
+
 ## Why it is worth measuring yourself
 
 The general lesson is not about Avito and not about us: **an aggregate field-coverage number is only

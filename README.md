@@ -49,9 +49,9 @@ failure**, and you will spend a day debugging a bug that does not exist.
 
 ## What one row actually looks like
 
-The fields this measurement counts, on a real row returned 2026-09-25. Trimmed to the price and
-location fields; the seller name and the street address are replaced here because publishing them
-is not necessary to show that the field exists, and they come back populated in your own calls.
+One complete row from `avito/v1/search`, returned 2026-09-25, with nothing removed except
+two personal fields. Every field name the endpoint can return is here, so you can check
+whether the one you need exists before writing a line of code.
 
 ```json
 {
@@ -64,15 +64,20 @@ is not necessary to show that the field exists, and they come back populated in 
     "slug": "telefony",
     "root_category_id": 6
   },
+  "subtitle": null,
   "price": 176500,
-  "price_text": "176 500 ₽",
-  "currency": "RUB",
+  "price_min": null,
+  "price_max": null,
   "price_is_from": false,
-  "price_not_published": false,
+  "currency": "RUB",
+  "price_text": "176 500 ₽",
+  "price_period": null,
   "is_free": false,
+  "price_not_published": false,
   "price_before_discount": null,
   "discount_percent": null,
   "price_lowered": false,
+  "price_per_unit": null,
   "published_at": "2026-09-25T14:56:46Z",
   "location": {
     "location_id": 652000,
@@ -86,27 +91,62 @@ is not necessary to show that the field exists, and they come back populated in 
     "precision": "exact"
   },
   "coordinates_withheld": false,
-  "address_as_typed": "<redacted for this README>",
+  "address_as_typed": "<redacted in this README — returned populated in your own calls>",
   "seller": {
     "type": "company",
     "type_label": "Компания",
-    "name": "<redacted for this README>",
+    "has_shop": false,
+    "name": "<redacted in this README — returned populated in your own calls>",
     "name_withheld": false,
     "name_hidden_by_avito": false,
+    "profile_id": null,
+    "profile_url": "https://www.avito.ru",
     "rating": 4.9,
     "rating_scale": 5,
     "reviews_count": 108,
-    "closed_ads_count": 616
+    "closed_ads_count": 616,
+    "reseller_likely": true,
+    "reseller_reasons": [
+      "company account",
+      "616 closed ads (>= 30)",
+      "<1 more — same shape>"
+    ],
+    "info": null,
+    "badges": [
+      "Надёжный продавец"
+    ]
   },
+  "images": [
+    "https://40.img.avito.st/image/1/1.chHeKraA3viQgCTztl8hT8eK3Pxsndr4bPq__Gxx1QJhidrikIAk82g.a-yrQwrHHoQz68C3ZsH3NDFFapb_3qfWjrUNCZO0QwA",
+    "https://20.img.avito.st/image/1/1.xBkY3baAaPBWd5L7HKbGRgF9avSqamzwqg0J9KqGYwqnfmzqVneS-64.Q_AmNFWI7HJK0Bg5wfo-m69xbBCdYfphnsOkOM4PpGo?cqp=2.2LhnDdKx1gU5sZ7QAbwhSdJoeYt5K_KL9JwGcCXpGrDVbBxJ1yJf9Jn7hY3rGWaiHtSha9zz1w=="
+  ],
   "images_count": 2,
+  "has_video": false,
+  "description_snippet": "18 pro max 256 в цвете Bulgundy.\n\nДанная позиция под заказ на следующий день, если есть на складе.\n\nПривезем за 1 день.\n\nЦена указана за наличный расчет, оплата по безналу — комиссия.\n\nПочему стоит покупать у нас:\n\nМагазин в центре города с удобной п...",
+  "params_summary": "Новый",
+  "badges": [
+    "Цена ниже рыночной"
+  ],
+  "development_name": null,
+  "realty_type": null,
+  "is_promoted": false,
+  "paid_services": null,
+  "is_xl": false,
   "is_reserved": false,
-  "delivery_available": false
+  "delivery_available": false,
+  "delivery_text": null,
+  "is_verified_item": false
 }
 ```
 
-Note `price_not_published`, `is_free` and `coordinates_withheld` sitting next to the values they
-explain. That is the whole argument of this repo in one object: a null is only useful if something
-next to it says why.
+> **Only this README hides those values.** The API returns them populated: seller name, street
+> address and the contact fields all come back in your own calls, and for most customers that is
+> the point of the endpoint. They are masked here because a public README is not the right place to
+> republish an individual's details, not because the data is unavailable.
+
+Note `price_not_published`, `is_free` and `coordinates_withheld` sitting next to the values
+they explain. That is this repo's argument in one object: **a null is only useful if
+something beside it says why.**
 
 ## Why it is worth measuring yourself
 
